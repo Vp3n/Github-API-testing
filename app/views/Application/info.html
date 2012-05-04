@@ -1,0 +1,56 @@
+#{extends 'main.html' /}
+#{set title:'Repository stats' /}
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="well center">
+	        <h1>${repository.name}</h1>
+	        <h2><small>stats based on last 100 commits</small></h2>
+	    </div>
+     </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span6">
+        <div class="contributors well">
+            <h3 class="center subtitle">Contributors</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>User</th>
+	                    <th>Sample</th>
+	                    <th>Impact(sample)</th>
+	                    <th>Total contribution</th>
+	                 </tr>
+                </thead>
+                <tbody>
+                    #{list items:usersImpact, as:'userImpact'}
+                    <tr>
+                        <td>${userImpact.contributor.name}</td>
+                        <td>${userImpact.contributions}</td>
+                        <td>${userImpact.percentImpactOnSample.format('#0.##')}%</td>
+                        <td>${userImpact.contributor.totalContributions}</td>
+                    </tr>
+                    #{/list}
+                </tbody>
+            </table>
+        </div>    
+    </div>
+    <div class="span6">
+        <div class="timeline well">
+            <h3 class="center subtitle">Timeline</h3>
+            <ul class="unstyled">
+            #{list items:timeline, as:'commit'}
+	            <li class="timeline-item">
+	               <a href="${commit.url}">Committed <span class="bold">${commit.fromNow()}</span></a>
+	               <br />
+	               by <span class="italic">${commit.committer.name}</span> <br />
+	               ${commit.message}
+	            </li>
+            #{/list}
+            </ul>
+        </div>
+    </div>
+</div>
+
+

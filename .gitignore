@@ -1,0 +1,16 @@
+.*
+# except for .gitignore
+!.gitignore
+
+# Ignore Play! working directory #
+db
+eclipse
+log
+logs
+precompiled
+tmp
+test-result
+server.pid
+.project
+.classpath
+.DS_Store

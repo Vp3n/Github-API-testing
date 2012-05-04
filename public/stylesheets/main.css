@@ -1,0 +1,51 @@
+.center {
+    text-align: center;	
+}
+
+.column {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.documentation a, .documentation a:hover {
+	color:white;
+	text-decoration:none;
+}
+
+.timeline-item {
+    margin-top: 5px;
+    padding: 5px 5px;	
+}
+
+h3.subtitle {
+	font-size: 24px;
+	margin: 5px 0px 20px 0px;
+}
+
+
+.documentation {
+  position: absolute;
+  top: 30px;
+  left: -50px;
+  padding: 0.75em 4.5em;
+  background: darkblue;
+  -webkit-transform:rotate(-40deg);
+  -moz-transform:rotate(-40deg);
+  -ms-transform:rotate(-40deg);
+  -o-transform:rotate(-40deg);
+  transform:rotate(-40deg);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid white;
+  box-shadow: 0 0 10px black;
+  text-shadow: 0 0 10px black;
+}

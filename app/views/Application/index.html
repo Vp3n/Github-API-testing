@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Repositories searching' /}
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="well">
+			#{if flash.contains("error.timeout") || flash.error}
+	        <div class="alert alert-error center">
+	            <span class="error center">
+	                ${flash.error}
+	                ${flash.get("error.timeout")}
+	            </span>
+	        </div>
+	        #{/if}
+		    <form action="@{Application.search}" id="search-form"  method="get" class="form-search center">
+			    <input id="name" type="text" name="name" value="${name}"/>  
+			    <input type="submit" class="btn btn-primary" value="SEARCH" />
+			</form>
+		</div>
+	</div>
+</div>
+
+
+#{include 'tags/_repositories.html' /}
+

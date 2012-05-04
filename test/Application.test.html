@@ -1,0 +1,11 @@
+*{ You can use plain selenium command using the selenium tag }*
+
+#{selenium}
+    // Open the home page, and check that no error occured
+    open('/')
+    type('name', 'play')
+    assertTextPresent('playframework');
+    open(/repository/play/playframework)
+    assertTextPresent('Morten Kjetland');
+    assertTextPresent('omaroman');
+#{/selenium}
